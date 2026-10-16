@@ -175,11 +175,11 @@ class TabApp:
                         current_size >>= 1
                         count += 1
 
-                    # Use 64kB as a heuristic for packing. Use the next power
-                    # of two for sizes less than 64kB. Otherwise we use the
+                    # Use 16kB as a heuristic for packing. Use the next power
+                    # of two for sizes less than 16kB. Otherwise we use the
                     # the following to reduce wasted space:
                     # (X - 1) * (NextPowerOfTwo / 8) < size < X * (NextPowerOfTwo)
-                    if original_app_size < (1024 * 64):
+                    if original_app_size < (1024 * 16):
                         logging.debug(
                             "Rounding app up to ^2 size ({} bytes)".format(1 << count)
                         )
