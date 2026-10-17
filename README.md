@@ -1,5 +1,22 @@
 # ![TockLoader](http://www.tockos.org/assets/img/tockloader.svg#a "Tockloader Logo")
 
+# This is a ENTS-node specific fork of Tockloader. The general informaition of Tockloader can be found below
+
+Install
+-------
+
+```
+pip3 install pipx
+pipx install --force "git+https://github.com/jlab-sensing/ENTS-tockloader.git@ents-patch"
+```
+
+Changes from Generic Tockloader
+--------
+1. In ```app_tab.py```, ```set_size_constraint.py``` is forced to use the (X - 1) * (NextPowerOfTwo / 8) < size < X * (NextPowerOfTwo) for every app to avoid powers of 2 padding. This is because padding actually exceeded apps + kernel space on our implementation.
+2. stm32wle5jc does not have alignemnt constraints. With alignment constraints, there wasn't space to flash both appss.
+
+
+# Generic Tockloader info
 Tool for programming Tock onto hardware boards.
 
 Install
