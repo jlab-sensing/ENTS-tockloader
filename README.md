@@ -10,6 +10,8 @@ pip3 install pipx
 pipx install --force "git+https://github.com/jlab-sensing/ENTS-tockloader.git@ents-patch"
 ```
 
+You should see version ```tockloader 1.17.0+ents```
+
 Changes from Generic Tockloader
 --------
 1. In ```app_tab.py```, ```set_size_constraint.py``` is forced to use the (X - 1) * (NextPowerOfTwo / 8) < size < X * (NextPowerOfTwo) for every app to avoid powers of 2 padding. This is because padding actually exceeded apps + kernel space on our implementation.
