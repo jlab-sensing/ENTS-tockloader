@@ -147,6 +147,7 @@ class TockLoader:
             },
             "stm32wle5jc": {
                 "start_address": 0x8018000,
+                "alignment_constraint": None,
             },
         },
     }
